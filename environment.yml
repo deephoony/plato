@@ -1,0 +1,36 @@
+name: plato
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - anaconda
+dependencies:
+  - python=3.10
+  - pip
+  - pytorch
+  - torchvision
+  - cython=0.29.37
+  - numpy=1.26
+  # Required for MuJoCo rendering.
+  - glew
+  - mesalib
+  - mesa-libgl-cos6-x86_64
+  - glfw3
+  - imageio
+  - imageio-ffmpeg
+  - ffmpeg
+  # Plotting (used during analysis only; safe to remove for training-only runs).
+  - matplotlib
+  - seaborn
+  - pandas
+  - scikit-learn
+  - pip:
+      - hydra-core
+      - gin-config==0.5.0
+      - gtimer==1.0.0b5
+      - gym==0.23.1
+      - mujoco-py==2.1.2.14
+      - tabulate
+      - termcolor==2.4.0
+      # Optional: install only if you set use_wandb=true.
+      # - wandb

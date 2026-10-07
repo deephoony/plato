@@ -1,0 +1,20 @@
+# @package _global_
+defaults:
+  - common
+  - _self_
+
+# Environment settings follow the ER-TRL/CSRO benchmark configuration. Datasets
+# are selected in cfgs/data/*.yaml and PLATO's per-environment hyperparameters
+# live in cfgs/algo_env/plato/*.yaml.
+env_name: 'cheetah-vel-custom'
+algo_params:
+  alpha_init: 50.0
+  meta_batch_size: 16
+  num_steps_per_eval: 600
+  embedding_batch_size: 100
+  embedding_mini_batch_size: 100
+  num_train_steps_per_itr: 1000
+  club_model_loss_weight: 10.0
+  club_loss_weight: 10.0
+  prediction_loss_weight: 1.5
+  mir_loss_weight: 2.5

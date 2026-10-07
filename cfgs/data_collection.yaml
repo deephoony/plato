@@ -1,0 +1,68 @@
+defaults:
+  - _self_
+  - env: null
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+# Per-task SAC behaviour-policy collection, following the convention of FOCAL,
+# CSRO, and UNICORN. Run once per (env, goal_idx) to populate the offline dataset.
+experiment: test_exp
+
+num_train_steps: 1000000
+replay_buffer_capacity: ${num_train_steps}
+num_seed_steps: 50000
+eval_frequency: 50000
+
+# Deterministic evaluation (mean action).
+num_eval_episodes: 20
+# Stochastic evaluation (sampled action) — these rollouts are saved as the
+# offline trajectories trj_eval{idx}_step{step}.npy.
+num_eval_sample_episodes: 50
+eval_start_num: 0
+
+device: cuda:0
+log_frequency: 50000
+use_wandb: false
+save_video: false
+
+env_params:
+  n_tasks: 40
+  max_episode_steps: 200
+
+seed: 0
+goal_idx: 0
+agent_name: sac
+
+agent_cfg:
+  obs_dim: ???        # filled in at runtime
+  action_dim: ???     # filled in at runtime
+  action_range: [-1, 1]
+  device: ${device}
+  critic_cfg:
+    obs_dim: ${agent_cfg.obs_dim}
+    action_dim: ${agent_cfg.action_dim}
+    hidden_dim: 1024
+    hidden_depth: 2
+  actor_cfg:
+    obs_dim: ${agent_cfg.obs_dim}
+    action_dim: ${agent_cfg.action_dim}
+    hidden_depth: 2
+    hidden_dim: 1024
+    log_std_bounds: [-5, 2]
+  discount: 0.99
+  init_temperature: 0.1
+  alpha_lr: 1e-4
+  alpha_betas: [0.9, 0.999]
+  actor_lr: 1e-4
+  actor_betas: [0.9, 0.999]
+  actor_update_frequency: 1
+  critic_lr: 1e-4
+  critic_betas: [0.9, 0.999]
+  critic_tau: 0.005
+  critic_target_update_frequency: 2
+  batch_size: 1024
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .

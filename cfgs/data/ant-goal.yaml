@@ -1,0 +1,9 @@
+# @package _global_
+algo_params:
+  data_dir: '${oc.env:PLATO_DATA_DIR}/ant-goal-custom'
+
+  # Prefer the converged 1M~3M window everywhere. The offline loader now
+  # falls back per task to the highest available checkpoints if recollection is
+  # still incomplete for some moderate/extreme tasks.
+  train_epoch: [1000000, 3000000, 50000]
+  eval_epoch:  [1000000, 3000000, 50000]

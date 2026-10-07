@@ -1,0 +1,3 @@
+# @package _global_
+algo_params:
+  data_dir: '${oc.env:PLATO_DATA_DIR}/walker-mass'
