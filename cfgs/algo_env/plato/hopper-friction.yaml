@@ -1,0 +1,31 @@
+# @package _global_
+# Per-env PLATO hyperparameters for hopper-friction.
+# Loaded automatically when running `algo=plato env=hopper-friction`.
+algo_params:
+  allow_backward_z: false
+  use_FOCAL_cl: true
+  use_club: true
+  use_prediction: false
+  use_decoder: true
+  use_simulate: true
+  use_lore: true
+  use_adaptive_alpha: false
+  alpha_init: 500.0
+  alpha_lr: 1.0
+  alpha_max: 2000.0
+  target_divergence: 0.05
+  z_loss_weight: 10.0
+  recon_detach_z: true
+  recon_loss_weight: 3.0
+  reward_recon_scale: 3.0
+  num_ensemble: 10
+  use_bootstrap: true
+  bootstrap_ratio: 0.8
+  decoder_lr: 0.0003
+  rollout_horizon: 2
+  rollout_weight: 0.03
+  lambda_pess: 5.0
+  simulate_warmup_steps: 25000
+  rollout_state_clip_K: 10.0
+  lore_alpha: 0.1
+  lore_p_exponent: 2.0

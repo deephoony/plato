@@ -1,0 +1,28 @@
+# @package _global_
+# PLATO defaults shared by all environments. With every PLATO component off,
+# the agent reduces to its CSRO backbone. The per-environment settings used in
+# the paper (alpha, lambda_pess, H, T_warm, ...) live in
+# cfgs/algo_env/plato/<env>.yaml and are merged automatically.
+algo_name: "plato"
+
+algo_params:
+  allow_backward_z: false
+  use_FOCAL_cl: true
+  use_club: true
+  use_prediction: false
+  # PLATO components (enabled in cfgs/algo_env/plato/<env>.yaml)
+  use_decoder: false
+  use_simulate: false
+  use_lore: false
+  use_adaptive_alpha: false
+  # Ablations from the paper (Section 6, Q3), set from the command line:
+  #   algo_params.lore_random_dir=true    # no-direction: random unit vector instead of centroid-outward
+  #   algo_params.lambda_pess=0           # no-weight: disable the pessimism weight
+  #   algo_params.q_use_synthetic=true    # Q-synth: also train the critic on imagined transitions
+  lore_random_dir: false
+  q_use_synthetic: false
+
+util_params:
+  exp_name: 'plato'
+
+algo_type: "PLATO"

@@ -1,0 +1,37 @@
+# @package _global_
+# Per-env PLATO hyperparameters for walker-mass.
+# Loaded automatically when running `algo=plato env=walker-mass`.
+algo_params:
+  allow_backward_z: false
+  use_FOCAL_cl: true
+  use_club: true
+  use_prediction: false
+  use_decoder: true
+  use_simulate: true
+  use_lore: true
+  use_adaptive_alpha: true
+  alpha_base: 1.5
+  eta_u: 0.7
+  u_ema_tau: 0.99
+  u_warmup_steps: 5000
+  u_clip: 5.0
+  alpha_lr: 0.1
+  target_divergence: 0.25
+  z_loss_weight: 1.0
+  recon_loss_weight: 2.5
+  reward_recon_scale: 1.0
+  recon_detach_z: false
+  num_ensemble: 10
+  use_bootstrap: true
+  bootstrap_ratio: 0.8
+  decoder_lr: 0.0003
+  rollout_horizon: 5
+  rollout_weight: 0.5
+  lambda_pess: 1.0
+  simulate_warmup_steps: 10000
+  rollout_state_clip_K: 10.0
+  alpha_init: 150.0
+  alpha_max:  2500.0
+  lore_alpha:      0.7
+  lore_p_exponent: 2.0
+

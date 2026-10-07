@@ -1,0 +1,36 @@
+defaults:
+  - _self_
+  - env: null
+  - algo: null
+  - data: ${env}
+  - optional algo_env: ${algo}/${env}
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled  
+
+# Common hyperparameters
+latent_size: 20
+net_size: 256
+encoder_dims: [200, 200, 200]
+use_gpu: true
+gpu_id: 0
+# Weights & Biases logging is disabled by default to keep the entry-point
+# self-contained. Set use_wandb=true at the CLI to
+# enable; the project name and entity are picked up from the local W&B
+# config (see launcher_util.py for the wandb.init call).
+use_wandb: false
+seed: 0
+
+env_params:
+  n_tasks: 40
+  max_episode_steps: 200
+
+path_to_weights: null
+
+util_params:
+  base_log_dir: ./output
+  debug: false
+  
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .

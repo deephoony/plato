@@ -1,0 +1,37 @@
+# @package _global_
+# Per-env PLATO hyperparameters for hopper-mass.
+# Loaded automatically when running `algo=plato env=hopper-mass`.
+algo_params:
+  allow_backward_z: false
+  use_FOCAL_cl: true
+  use_club: true
+  use_prediction: false
+  use_decoder: true
+  use_simulate: true
+  use_lore: true
+  use_adaptive_alpha: true
+  alpha_base: 1.0
+  eta_u: 1.8
+  u_ema_tau: 0.99
+  u_warmup_steps: 5000
+  u_clip: 5.0
+  alpha_lr: 1.0
+  target_divergence: 0.05
+  z_loss_weight: 1.0
+  recon_loss_weight: 3.0
+  reward_recon_scale: 3.0
+  recon_detach_z: false
+  num_ensemble: 10
+  use_bootstrap: true
+  bootstrap_ratio: 0.8
+  decoder_lr: 0.0003
+  rollout_horizon: 2
+  rollout_weight: 0.05
+  lambda_pess: 5.0
+  simulate_warmup_steps: 10000
+  rollout_state_clip_K: 10.0
+  alpha_init: 150.0
+  alpha_max:  2500.0
+  lore_alpha:      0.1
+  lore_p_exponent: 2.0
+
