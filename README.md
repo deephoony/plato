@@ -4,6 +4,8 @@ Official implementation of **Pessimistic Latent Task-aware Optimization for Robu
 
 Chang-Hoon Jeong, Kisung Shin, Hanwool Sul, Byoung-Tak Zhang (Seoul National University)
 
+**Paper:** [arXiv:2610.15428](https://arxiv.org/abs/2610.15428) ([PDF](https://arxiv.org/pdf/2610.15428)) · *Advances in Neural Information Processing Systems (NeurIPS) 2026*
+
 This implementation is built on the [ER-TRL](https://github.com/mohammadrezanakhaei/er-trl) codebase.
 
 ![PLATO overview](assets/overview.png)
@@ -89,7 +91,22 @@ python launch_experiment.py env=ant-dir algo=plato algo_params.q_use_synthetic=t
   title     = {Pessimistic Latent Task-aware Optimization for Robust Offline Meta-Reinforcement Learning},
   author    = {Jeong, Chang-Hoon and Shin, Kisung and Sul, Hanwool and Zhang, Byoung-Tak},
   booktitle = {Advances in Neural Information Processing Systems},
-  year      = {2026}
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2610.15428}
+}
+```
+
+arXiv preprint ([arXiv:2610.15428](https://arxiv.org/abs/2610.15428)):
+
+```bibtex
+@misc{jeong2026pessimisticlatenttaskawareoptimization,
+      title={Pessimistic Latent Task-aware Optimization for Robust Offline Meta-Reinforcement Learning}, 
+      author={Chang-Hoon Jeong and Kisung Shin and Hanwool Sul and Byoung-Tak Zhang},
+      year={2026},
+      eprint={2610.15428},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2610.15428}, 
 }
 ```
 
