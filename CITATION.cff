@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "PLATO: Pessimistic Latent Task-aware Optimization"
+authors:
+  - family-names: Jeong
+    given-names: Chang-Hoon
+  - family-names: Shin
+    given-names: Kisung
+  - family-names: Sul
+    given-names: Hanwool
+  - family-names: Zhang
+    given-names: Byoung-Tak
+repository-code: "https://github.com/deephoony/plato"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "Pessimistic Latent Task-aware Optimization for Robust Offline Meta-Reinforcement Learning"
+  authors:
+    - family-names: Jeong
+      given-names: Chang-Hoon
+    - family-names: Shin
+      given-names: Kisung
+    - family-names: Sul
+      given-names: Hanwool
+    - family-names: Zhang
+      given-names: Byoung-Tak
+  collection-title: "Advances in Neural Information Processing Systems"
+  year: 2026
+  url: "https://arxiv.org/abs/2610.15428"
+  identifiers:
+    - type: other
+      value: "arXiv:2610.15428"
